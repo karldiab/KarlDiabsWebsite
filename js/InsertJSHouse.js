@@ -17,7 +17,7 @@ function insertHouse() {
 	drawSmoke13();
 	drawSmoke14();
 	windGenerator();
-	$('#houseController').append('hello');
+
 }
 
 // Function to draw sky as backdrop
