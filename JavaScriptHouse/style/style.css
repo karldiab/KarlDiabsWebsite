@@ -1,0 +1,94 @@
+body {
+	text-align: center;
+}
+.centered {
+	height: 300px;
+	width: 300px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+#canvases {
+	margin-left: -300px;
+}
+#mySky {
+	position: absolute;
+	z-index: 0;
+}
+#myHouse {
+	position: absolute;
+	z-index: 20;
+}
+#mySmoke1 {
+	position: absolute;
+	z-index: 1;
+}
+#mySmoke2 {
+	position: absolute;
+
+	z-index: 2;
+}
+#mySmoke3 {
+	position: absolute;
+
+	z-index: 3;
+}
+#mySmoke4 {
+	position: absolute;
+
+	z-index: 4;
+}
+#mySmoke5 {
+	position: absolute;
+
+	z-index: 5;
+}
+#mySmoke6 {
+	position: absolute;
+
+	z-index: 6;
+}
+#mySmoke7 {
+	position: absolute;
+
+	z-index: 6;
+}
+#mySmoke8 {
+	position: absolute;
+
+	z-index: 8;
+}
+#mySmoke9 {
+	position: absolute;
+
+	z-index: 9;
+}
+#mySmoke10 {
+	position: absolute;
+
+	z-index: 10;
+}
+#mySmoke11 {
+	position: absolute;
+
+	z-index: 11;
+}
+#mySmoke12 {
+	position: absolute;
+
+	z-index: 12;
+}
+#mySmoke13 {
+	position: absolute;
+
+	z-index: 13;
+}
+#mySmoke14 {
+	position: absolute;
+
+	z-index: 14;
+}
+#smokeSlider {
+	width: 30%;
+	margin: auto;
+}
