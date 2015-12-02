@@ -6,7 +6,7 @@ var zVantage = 300;
 var eyeDistance = 500;
 var debugFlag = false;
 var numOfVertices = 8;
-var objectSize = 150;
+var objectSize = 50;
 var hRotation = 0;
 var vRotation = 0;
 var canvasWidth = 0;
@@ -16,7 +16,7 @@ var canvasY = 0;
 var points = makeDodecahedron(objectSize);
 var rotatedPoints = points;
 /* driver function to initiate all necessary functions. */
-function runAll() {
+function buildEngine() {
 	drawFrame(xVantage,yVantage,zVantage,eyeDistance);
 	document.getElementById("zSliderText").innerHTML = "Z Vantage: " + zVantage;
 	document.getElementById("ySliderText").innerHTML = "Y Vantage: " + yVantage;
