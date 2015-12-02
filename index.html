@@ -8,11 +8,54 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Karl Diab's Website</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
+		<script src="js/insertJSHouse.js"></script>
+		<script src="js/3dEngine.js"></script>	
 		<script src="js/htmlinjections.js"></script>
 	</head>
 	<body>
-		<div id="navigation"></div>
+		<div class="container">
+            <header>
+                <div class="row">
+					<div class="col-xs-6">
+                        <h2>Karl Diab's Website</h2>
+                    </div>
+                    <div class="col-xs-6">
+                        <img src="images/coffeelogo.png" alt="Coffee Logo" class="pull-right" />
+                    </div>
+                </div>
+            </header>
+			<nav class="navbar navbar-default">
+			  <div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+				  <a class="navbar-brand" href="http://www.karldiab.com">Karl Diab</a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				  <ul class="nav navbar-nav">
+					<li class="active"><a href="#">Bios <span class="sr-only">(current)</span></a></li>
+					<li><a href="#">Contact Info</a></li>
+				  </ul>
+				  <ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Link</a></li>
+					<li class="dropdown">
+					  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Web Projects <span class="caret"></span></a>
+					  <ul class="dropdown-menu">
+						<li><a href="" data-toggle="modal" data-target="#JSHouseModal" onclick='insertHouse()'>JavaScript House</a></li>
+						<li><a href="" data-toggle="modal" data-target="#3DRendererModal" onclick='buildEngine()'>Pure JS 3D Renderer</a></li>
+					  </ul>
+					</li>
+				  </ul>
+				</div><!-- /.navbar-collapse -->
+			 </div><!-- /.container-fluid -->
+		</nav>
 		<div class="container">
 			<div class="row">
 				<div id="myCarousel" class="carousel slide col-xs-12 bg-info" data-ride="carousel">
@@ -68,13 +111,142 @@
         </div>
         <div class="modal-body">
           <div id="JSHouseDiv">
+			  <div class="container" style="width: 100%;">
+	<div class="row">
+		<div class="col-xs-12 clearfix" style="height: 300px;">
+<div class="canvases">
+	<canvas id="myHouse" width="300" height="300"></canvas>
+	<canvas id="mySky" width="300" height="300"></canvas>
+	<canvas id="mySmoke1" width="300" height="300"></canvas>
+	<canvas id="mySmoke2" width="300" height="300"></canvas>
+	<canvas id="mySmoke3" width="300" height="300"></canvas>
+	<canvas id="mySmoke4" width="300" height="300"></canvas>
+	<canvas id="mySmoke5" width="300" height="300"></canvas>
+	<canvas id="mySmoke6" width="300" height="300"></canvas>
+	<canvas id="mySmoke7" width="300" height="300"></canvas>
+	<canvas id="mySmoke8" width="300" height="300"></canvas>
+	<canvas id="mySmoke9" width="300" height="300"></canvas>
+	<canvas id="mySmoke10" width="300" height="300"></canvas>
+	<canvas id="mySmoke11" width="300" height="300"></canvas>
+	<canvas id="mySmoke12" width="300" height="300"></canvas>
+	<canvas id="mySmoke13" width="300" height="300"></canvas>
+	<canvas id="mySmoke14" width="300" height="300"></canvas>
+</div><br />
+</div>
+<div class="row">
+<div class="col-xs-6 clearfix">
+<div id="houseController"></div>
+<h5>Wind factor:    </h5>
+<h5 id="theWind"></h5>
+<button class="btn btn-primary" onclick="toggleSmoke();">Change Smoke Color!</button>
+<br />
+<h5>Amount of smoke: </h5>
+<br / >
+<h5 id="smokeAmount">14</h5>
+<form oninput="setSmokeAmount(parseInt(smokeSlider.value)), drawHouse()">
+<input name="smokeSlider" id="smokeSlider" type="range" min="0" max="14" step="1" value="14" />
+<output name="x" for="smokeSlider"></output>
+</form>
+</div>
+<div class="col-xs-6 clearfix" style="padding: 10px;">
+	<p>Built entirely in JavaScript, no images were used. Feel free to use the project
+							but please give credit where it is due.</p><br />
+	<div class="btn-group">
+		<a href="https://github.com/karldiab/JavaScriptHouseProject" class="btn btn-primary">Source Code</a>
+		<a href="../JavaScriptHouse/index.html" class="btn btn-primary">View Page</a>
+	</div>
+</div>
+</div>
+</div>
 		  </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
-      
+      </div>
+    </div>
+  </div>
+  
+  		<!-- Modal -->
+  <div class="modal fade" id="3DRendererModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Pure JavaScript 3D Object Renderer</h4>
+        </div>
+        <div class="modal-body">
+          <div id="3DRendererDiv">
+			  <div class="container" style="width: 100%;">
+	<div class="row">
+		<div class="col-xs-12 clearfix" style="height: 300px;">
+			<div class="canvases">
+<canvas id="renderCanvas" width="300px" height="300px"></canvas>
+</div>
+</div>
+<div class="row">
+					<div class="col-md-6" style="padding: 50px;">
+						<div class="row">
+						<div class="col-xs-4">
+						<h5 id="xSliderText">X Vantage: </h5><br />
+						<form oninput="setXVantage(parseInt(xSlider.value))">
+							<input style="width: 50%;" name="xSlider" id="xSlider" type="range" min="-500" max="500" step="25" value="0" />
+						</form>
+
+						</div>
+						<div class="col-xs-4">
+						<h5 id="ySliderText">Y Vantage: </h5><br />
+						<form oninput="setYVantage(parseInt(ySlider.value))">
+							<input style="width: 50%;" name="ySlider" id="ySlider" type="range" min="-500" max="500" step="25" value="0" />
+						</form>
+						</div>
+						<div class="col-xs-4">
+						<h5 id="zSliderText">Z Vantage: </h5><br />
+						<form oninput="setZVantage(parseInt(zSlider.value))">
+							<input style="width: 50%;" name="zSlider" id="zSlider" type="range" min="-400" max="500" step="25" value="300" />
+						</form>
+
+						</div>
+						</div>
+						<div class="row" style="padding: 25px;">
+						<div class="col-xs-12">
+							<div class="btn-group">
+								<button class="btn btn-primary" onclick="toggleDebug();">Toggle Text</button>
+								<button class="btn btn-success" onclick="changeShape(0);">Cube</button>
+								<button class="btn btn-success" onclick="changeShape(1);">Dodecahedron</button>
+							</div>
+						</div>
+						</div>
+					
+				<div class="row">
+					<div class="col-xs-12">
+						<h4>Author: Karl Diab</h4>
+						<h5>Completed 25 November 2015</h5>
+						<p>A simple engine that builds 3D objects and displays them from a variable vantage point.
+							Built entirely in JavaScript with no additional libraries. The purpose of this project
+							was to better understand the mechanics of more advanced graphics libraries. Feel free 
+							the use the source code but please give credit where it is due.
+						</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12">
+							<a href="https://github.com/karldiab/JS3DRenderEngine/"><button class="btn btn-primary">Source Code</button></a>
+				</div>
+			</div>
+		</div>
+</div>
+</div>
+		  </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      </div>
     </div>
   </div>
 	</body>
