@@ -8,7 +8,7 @@ $(function () {
 	
 })
 $(function () {
-	$("#3DRendererDiv").load("../supportHTML/3DRenderer.html");
+	$("#rendererDiv").load("../supportHTML/3DRenderer.html");
 	
 })
        

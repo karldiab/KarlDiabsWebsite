@@ -194,7 +194,7 @@ function drawFrame(vantageX,vantageY,vantageZ,eyeDistance) {
 		//Prints debugging information to canvas, including ID of each point
 		if (debugFlag == true) {
 			myCanvas.font="13px Arial";
-			myCanvas.fillText(i,x+10+canvasWidth,y+canvasHeight);
+			myCanvas.fillText(i,x+3+canvasWidth,y+canvasHeight);
 			myCanvas.fillText("X Vantage: " + parseFloat(Math.round(xVantage).toFixed(5)) + " Y Vantage: " + 
 			parseFloat(Math.round(yVantage).toFixed(5)) + " Z Vantage: " + parseFloat(Math.round(zVantage).toFixed(5)),10,25);
 			myCanvas.fillText("Upwards Rotation: " + parseFloat(Math.round(hRotation).toFixed(5)) + " Sideways Rotation: "

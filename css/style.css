@@ -26,6 +26,14 @@ h4 {
 	position: absolute;
 	z-index: 0;
 }
+#rendererDiv {
+	text-align: center;
+}
+#engineCanvas {
+	width: 300px;
+	height: 300px;
+	margin: auto;
+}
 #myHouse {
 	position: absolute;
 	z-index: 20;
