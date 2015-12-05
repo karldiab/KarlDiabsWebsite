@@ -3,7 +3,7 @@ header {
 }
 .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
-      width: 50%;
+      width: 40%;
       margin: auto;
 }
 
