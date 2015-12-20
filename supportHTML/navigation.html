@@ -6,7 +6,7 @@
                         <h2>Karl Diab's Portfolio</h2>
                     </div>
                     <div class="col-xs-6">
-                        <img src="http://karldiab.com/images/logo100.png" alt="KD Logo" class="pull-right" />
+                        <img src="../images/logo75.png" alt="KD Logo" class="pull-right" />
                     </div>
                 </div>
             </header>
@@ -26,7 +26,7 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				  <ul class="nav navbar-nav">
-					<li class="active"><a href="#">Bios <span class="sr-only">(current)</span></a></li>
+					<!--<li class="active"><a href="#">Bios <span class="sr-only">(current)</span></a></li>-->
 					<li><a href="#">Contact Info</a></li>
 				  </ul>
 				  <ul class="nav navbar-nav navbar-right">
@@ -34,11 +34,57 @@
 					<li class="dropdown">
 					  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Web Projects <span class="caret"></span></a>
 					  <ul class="dropdown-menu">
-						<li><a href="" data-toggle="modal" data-target="#JSHouseModal" onclick='insertHouse()'>JavaScript House</a></li>
-						<li><a href="" data-toggle="modal" data-target="#3DRendererModal" onclick='buildEngine()'>Pure JS 3D Renderer</a></li>
+                        <li><a href="3DPointsPlotter/index.html">3D Point Plotter</a></li>
+                        <li><a href="JS3DRenderEngine/index.html">Pure JS 3D Renderer</a></li>
+						<li><a href="JavaScriptHouse/index.html">JavaScript House</a></li>
 					  </ul>
 					</li>
 				  </ul>
 				</div><!-- /.navbar-collapse -->
 			 </div><!-- /.container-fluid -->
 		</nav>
+		
+		<!-- Modal -->
+  <div class="modal fade" id="JSHouseModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">JavaScript House Project</h4>
+        </div>
+        <div class="modal-body">
+          <div id="JSHouseDiv">
+		  </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  
+    		<!-- Modal -->
+  <div class="modal fade" id="3DRendererModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Pure JavaScript 3D Object Renderer</h4>
+        </div>
+        <div class="modal-body">
+          <div id="rendererDiv">
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
