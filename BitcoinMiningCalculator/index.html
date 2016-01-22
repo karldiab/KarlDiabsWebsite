@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" ng-app ng-controller="data">
   <head>
-    <title>Bitcoin Mining Calculator</title>
+    <title>Bitcoin Mining Calculator - Karl Diab's Portfolio</title>
     <script src="js/angular.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/Chart.min.js"></script>
@@ -24,7 +24,7 @@
                         <tr>
                             <th>Your Hashrate:</th>
                             <td>
-                                <input type="text" id="userHash" ng-model="userHash" name="userHash"
+                                <input type="number" id="userHash" ng-model="userHash" 
                                 ng-change="computeProfits()" placeholder="Enter Hashrate" />
                                 <select ng-model="userHashSuffix" ng-change="computeProfits()">
                                 <option value="GH" selected="selected" ng-init="userHashSuffix = 'GH'">GH/s</option>
@@ -35,24 +35,25 @@
                         </tr>
                         <tr>
                             <th>Network Difficulty:</th>
-                            <td><input type="text" ng-model="difficulty" ng-change="computeProfits()"/></td>
+                            <td><input type="number" ng-model="difficulty" ng-change="computeProfits()"/></td>
                         </tr>
                         <tr>
                             <th>BTC Price:</th>
-                            <td><input type="text" ng-model="price" ng-change="computeProfits()"/>
+                            <td><input type="number" ng-model="price" ng-change="computeProfits()"/>
                                 <select ng-model="currency" ng-change="fetchPriceOnly()">
                                 <option value="USD" ng-init="currencyCode = 'USD'">USD</option>
                                 <option value="CNY">CNY</option>
                                 <option value="CAD">CAD</option>
+                                <option value="AUD">AUD</option>
                             </td>
                         </tr>
                         <tr>
                             <th>Block Reward:</th>
-                            <td><input type="text" ng-model="reward" ng-change="computeProfits()"/> BTC</td>
+                            <td><input type="number" ng-model="reward" ng-change="computeProfits()"/> BTC</td>
                         </tr>
                         <tr>
                             <th>Power Consumption:</th>
-                            <td><input type="text" ng-model="wattage" ng-change="computeProfits()" ng-init="wattage = 0"/>
+                            <td><input type="number" ng-model="wattage" ng-change="computeProfits()" ng-init="wattage = 0"/>
                                 <select ng-model="powerSuffix" ng-change="computeProfits()">
                                 <option value="W" selected="powerSuffix" ng-init="powerSuffix = 'W'">W</option>
                                 <option value="kW">kW</option>
@@ -61,15 +62,15 @@
                         </tr>
                         <tr>
                             <th>Power Cost:</th>
-                            <td><input type="text" ng-model="powerCost" ng-change="computeProfits()" ng-init="powerCost = 0"/>{{ currency }} / kWh</td>
+                            <td><input type="number" ng-model="powerCost" ng-change="computeProfits()" ng-init="powerCost = 0"/>{{ currency }} / kWh</td>
                         </tr>
                         <tr>
                             <th>Pool Fee</th>
-                            <td><input type="text" ng-model="poolFee" ng-change="computeProfits()" ng-init="poolFee = 0"/> %</td>
+                            <td><input type="number" ng-model="poolFee" ng-change="computeProfits()" ng-init="poolFee = 0"/> %</td>
                         </tr>
                         <tr>
                             <th>Difficulty Increase</th>
-                            <td><input type="text" ng-model="nextDifficulty" ng-change="computeProfits()" ng-init="nextDifficulty = 5"/> %</td>
+                            <td><input type="number" ng-model="nextDifficulty" ng-change="computeProfits()" ng-init="nextDifficulty = 5"/> % / (~2 weeks)</td> 
                         </tr>
                     </table>
                     <h2>This Difficulty</h2>
@@ -116,6 +117,13 @@
                             <td>{{values[2][3]|currency}}</td>
                             <td>{{values[3][3]|currency}}</td>
                             <td ng-class="{negative: values[4][3] < 0}">{{values[4][3]|currency}}</td>
+                        <tr>
+                            <td>Annually</td>
+                            <td>{{values[0][4]|number:6}}</td>
+                            <td>{{values[1][4]|currency}}</td>
+                            <td>{{values[2][4]|currency}}</td>
+                            <td>{{values[3][4]|currency}}</td>
+                            <td ng-class="{negative: values[4][4] < 0}">{{values[4][4]|currency}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -164,6 +172,14 @@
                             <td>{{values[7][3]|currency}}</td>
                             <td ng-class="{negative: values[8][3] < 0}">{{values[8][3]|currency}}</td>
                         </tr>
+                        <tr>
+                            <td>Annually</td>
+                            <td>{{values[5][4]|number:6}}</td>
+                            <td>{{values[6][4]|currency}}</td>
+                            <td>{{values[2][4]|currency}}</td>
+                            <td>{{values[7][4]|currency}}</td>
+                            <td ng-class="{negative: values[8][4] < 0}">{{values[8][4]|currency}}</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -173,9 +189,9 @@
                 </div>
                 <div  ng-show="myLineChart">
                 <h3>Total Profit ({{currency}})</h3>
-                <canvas id="myChart" width="400" height="400"></canvas><br/>
+                <canvas id="myChart" width="450" height="450"></canvas><br/>
                 Time Frame:
-                <input type="text" ng-model="timeFrame" size="4" ng-init="timeFrame = 12" ng-change="changeAxis()"/> Months
+                <input type="number" ng-model="timeFrame" id="axisChange" ng-init="timeFrame = 12" ng-change="changeAxis()"/> Months
                 </div>
             </div>
         </div>
