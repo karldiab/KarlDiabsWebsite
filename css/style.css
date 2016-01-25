@@ -13,101 +13,39 @@ header {
 .footerright {
     text-align: right;
 }
-h4 {
+h4,
+h3 {
     text-align: center;
 }
-#JSHouseDiv {
-	text-align: center;
+.infoPanel {
+    width: 55%;
+    margin: 0 auto; 
 }
-#canvases {
-	margin-left: -300px;
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+    .infoPanel {
+        height: 500px;
+    }
 }
-#mySky {
-	position: absolute;
-	z-index: 0;
-}
-#rendererDiv {
-	text-align: center;
-}
-#engineCanvas {
-	width: 300px;
-	height: 300px;
-	margin: auto;
-}
-#myHouse {
-	position: absolute;
-	z-index: 20;
-}
-#mySmoke1 {
-	position: absolute;
-	z-index: 1;
-}
-#mySmoke2 {
-	position: absolute;
 
-	z-index: 2;
+@media only screen 
+and (min-device-width : 481px) 
+and (max-device-width : 800px) {
+    .infoPanel {
+        height: 450px;
+    }
 }
-#mySmoke3 {
-	position: absolute;
-
-	z-index: 3;
+@media only screen 
+and (min-device-width : 801px) 
+and (max-device-width : 1200px) {
+    .infoPanel {
+        height: 350px;
+    }
 }
-#mySmoke4 {
-	position: absolute;
-
-	z-index: 4;
-}
-#mySmoke5 {
-	position: absolute;
-
-	z-index: 5;
-}
-#mySmoke6 {
-	position: absolute;
-
-	z-index: 6;
-}
-#mySmoke7 {
-	position: absolute;
-
-	z-index: 6;
-}
-#mySmoke8 {
-	position: absolute;
-
-	z-index: 8;
-}
-#mySmoke9 {
-	position: absolute;
-
-	z-index: 9;
-}
-#mySmoke10 {
-	position: absolute;
-
-	z-index: 10;
-}
-#mySmoke11 {
-	position: absolute;
-
-	z-index: 11;
-}
-#mySmoke12 {
-	position: absolute;
-
-	z-index: 12;
-}
-#mySmoke13 {
-	position: absolute;
-
-	z-index: 13;
-}
-#mySmoke14 {
-	position: absolute;
-
-	z-index: 14;
-}
-#smokeSlider {
-	width: 25%;
-	margin: auto;
+@media only screen 
+and (min-device-width : 1201px) {
+    .infoPanel {
+        height: 300px;
+    }
 }
